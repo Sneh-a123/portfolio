@@ -1,0 +1,110 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-red: #DC2626;
+    --primary-glow: rgba(220, 38, 38, 0.4);
+    --bg-dark: #0F0F0F;
+    --card-dark: #171717;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    color-scheme: dark;
+  }
+
+  body {
+    background-color: #0F0F0F;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Red Glow Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0F0F0F;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #3F1010;
+    border-radius: 4px;
+    border: 1px solid rgba(220, 38, 38, 0.4);
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #DC2626;
+    box-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+  }
+}
+
+/* Glassmorphism & Neon Glow Helpers */
+.glass-panel {
+  background: rgba(23, 23, 23, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel-hover:hover {
+  border-color: rgba(220, 38, 38, 0.45);
+  box-shadow: 0 12px 30px -10px rgba(220, 38, 38, 0.25);
+  transform: translateY(-4px);
+}
+
+.glow-red {
+  filter: drop-shadow(0 0 12px rgba(220, 38, 38, 0.6));
+}
+
+.text-gradient-red {
+  background: linear-gradient(135deg, #FFFFFF 30%, #FEE2E2 70%, #DC2626 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, #FF6B6B 0%, #DC2626 50%, #991B1B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Code Snippet Card */
+.code-chip {
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  color: #FEE2E2;
+}
+
+/* Scanline / CRT Subtle Overlay */
+.scanlines {
+  background: linear-gradient(
+    rgba(18, 16, 16, 0) 50%, 
+    rgba(0, 0, 0, 0.25) 50%
+  ), linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.03),
+    rgba(0, 255, 0, 0.01),
+    rgba(0, 0, 255, 0.03)
+  );
+  background-size: 100% 3px, 6px 100%;
+  pointer-events: none;
+}
+
+/* Grid Background */
+.bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}
+
